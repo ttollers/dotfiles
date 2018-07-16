@@ -67,6 +67,8 @@ map <leader>nn :NERDTreeToggle<cr>
 map <leader>nb :NERDTreeFromBookmark<Space>
 map <leader>nf :NERDTreeFind<cr>
 
+" Set nerdtree to always show hidden files
+let NERDTreeShowHidden=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-multiple-cursors
@@ -137,6 +139,8 @@ let g:syntastic_javascript_checkers = ['jshint']
 " Go
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_go_checkers = ['go', 'golint', 'errcheck']
+" Prevents vim-go being realllly slow on saves
+" let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 
 " Custom CoffeeScript SyntasticCheck
 func! SyntasticCheckCoffeescript()
@@ -159,7 +163,7 @@ nnoremap <silent> <leader>d :GitGutterToggle<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:auto_save = 1  " enable AutoSave on Vim startup
 let g:auto_save_write_all_buffers = 0  " write all open buffers as if you would use :wa
-
+let g:auto_save_events = ["InsertLeave", "TextChanged"] 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Utilsnips
