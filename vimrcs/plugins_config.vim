@@ -35,13 +35,6 @@ let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
 
 
 """"""""""""""""""""""""""""""
-" => ZenCoding
-""""""""""""""""""""""""""""""
-" Enable all functions in all modes
-let g:user_zen_mode='a'
-
-
-""""""""""""""""""""""""""""""
 " => snipMate (beside <TAB> support <CTRL-j>)
 """"""""""""""""""""""""""""""
 ino <c-j> <c-r>=snipMate#TriggerSnippet()<cr>
@@ -175,3 +168,21 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Lanugage Server Plugin
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> gf :call LanguageClient_textDocument_formatting()<cr>
+nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Deo complete
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if has('nvim')
+    let g:deoplete#enable_at_startup = 1
+    " sets tab to cycle through auto-complete options
+    inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+    inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+endif

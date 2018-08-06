@@ -118,11 +118,7 @@ if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
 
-try
-    colorscheme desert
-catch
-endtry
-
+colorscheme desert
 set background=dark
 
 " Set extra options when running in GUI mode
@@ -217,12 +213,24 @@ map <leader>ba :bufdo bd<cr>
 map <leader>l :bnext<cr>
 map <leader>h :bprevious<cr>
 
-" Useful mappings for managing tabs
+" TABS ***
 map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove 
 map <leader>t<leader> :tabnext 
+
+nnoremap th  :tabfirst<CR>
+nnoremap tk  :tabnext<CR>
+nnoremap tj  :tabprev<CR>
+nnoremap tl  :tablast<CR>
+nnoremap tt  :tabedit<Space>
+nnoremap tn  :tabnext<Space>
+nnoremap tm  :tabm<Space>
+nnoremap td  :tabclose<CR>
+nnoremap th :tabnext<CR>
+nnoremap tl :tabprev<CR>
+nnoremap tn :tabnew<CR>
 
 " Let 'tl' toggle between this and the last accessed tab
 let g:lasttab = 1

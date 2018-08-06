@@ -3,9 +3,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" Let vundle manage itself:
 Plugin 'VundleVim/Vundle.vim'
-" Syntax checking plugin
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'fatih/vim-go'
@@ -17,11 +15,14 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'pangloss/vim-javascript'
 Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'vim-scripts/bufexplorer.zip'
 Plugin 'autozimu/LanguageClient-neovim'
 Plugin 'reasonml-editor/vim-reason-plus'
+Plugin 'itchyny/lightline.vim'
+
+if has('nvim')
+  Plugin 'Shougo/deoplete.nvim'
+endif
 
 call vundle#end()
 
