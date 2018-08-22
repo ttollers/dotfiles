@@ -30,12 +30,12 @@ filetype plugin indent on " Filetype auto-detection
 syntax on " Syntax highlighting
 filetype plugin indent on    " required
 
-source ~/.vim/vimrcs/basic.vim
-source ~/.vim/vimrcs/filetypes.vim
-source ~/.vim/vimrcs/plugins_config.vim
-source ~/.vim/vimrcs/extended.vim
+source ~/vim-setup/vimrcs/basic.vim
+source ~/vim-setup/vimrcs/filetypes.vim
+source ~/vim-setup/vimrcs/plugins_config.vim
+source ~/vim-setup/vimrcs/extended.vim
 
 " ON STARTUP
 if has('nvim')
-  source ~/.vim/vimrcs/nvim.vim
+  source ~/vim-setup/vimrcs/nvim.vim
 endif

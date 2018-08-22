@@ -26,5 +26,6 @@ TODO
 # Install the Language Client
 TODO: not completed
 ```
-bash ~/.vim/bundle/LanguageClient-neovim/install.sh 
+cd ~/.vim/bunndle/LanguageClient-neovim/install.sh 
+bash install.sh
 ```
