@@ -11,3 +11,4 @@ brew install ack
 # LanguageClient dependency
 cd ~/.vim/bunndle/LanguageClient-neovim/install.sh 
 bash install.sh
+

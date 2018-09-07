@@ -9,6 +9,9 @@ set history=500
 filetype plugin on
 filetype indent on
 
+" enable line numbers
+set number
+
 " Set to auto read when a file is changed from the outside
 set autoread
 
@@ -105,12 +108,7 @@ set foldcolumn=1
 " Enable syntax highlighting
 syntax enable 
 
-" Enable 256 colors palette in Gnome Terminal
-if $COLORTERM == 'gnome-terminal'
-    set t_Co=256
-endif
-
-colorscheme desert
+colorscheme solarized8
 set background=dark
 
 " Set extra options when running in GUI mode

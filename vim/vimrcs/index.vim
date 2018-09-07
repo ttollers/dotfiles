@@ -12,13 +12,14 @@ Plugin 'tpope/vim-surround'
 Plugin 'mileszs/ack.vim'
 Plugin '907th/vim-auto-save'
 Plugin 'junegunn/fzf.vim'
-Plugin 'flazz/vim-colorschemes'
 Plugin 'pangloss/vim-javascript'
 Plugin 'SirVer/ultisnips'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'autozimu/LanguageClient-neovim'
 Plugin 'reasonml-editor/vim-reason-plus'
 Plugin 'itchyny/lightline.vim'
+Plugin 'lifepillar/vim-solarized8'
+Plugin 'lifepillar/vim-cheat40'
 
 if has('nvim')
   Plugin 'Shougo/deoplete.nvim'
@@ -30,12 +31,12 @@ filetype plugin indent on " Filetype auto-detection
 syntax on " Syntax highlighting
 filetype plugin indent on    " required
 
-source ~/vim-setup/vimrcs/basic.vim
-source ~/vim-setup/vimrcs/filetypes.vim
-source ~/vim-setup/vimrcs/plugins_config.vim
-source ~/vim-setup/vimrcs/extended.vim
+source ~/dev-setup/vim/vimrcs/basic.vim
+source ~/dev-setup/vim/vimrcs/filetypes.vim
+source ~/dev-setup/vim/vimrcs/plugins_config.vim
+source ~/dev-setup/vim/vimrcs/extended.vim
 
 " ON STARTUP
 if has('nvim')
-  source ~/vim-setup/vimrcs/nvim.vim
+  source ~/dev-setup/vim/vimrcs/nvim.vim
 endif
