@@ -108,6 +108,7 @@ set foldcolumn=1
 " Enable syntax highlighting
 syntax enable 
 
+let g:solarized_use16 = 1
 colorscheme solarized8
 set background=dark
 

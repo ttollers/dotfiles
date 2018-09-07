@@ -1,35 +1,29 @@
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'scrooloose/nerdtree'
-Plugin 'fatih/vim-go'
-Plugin 'jlanzarotta/bufexplorer'
-Plugin 'tpope/vim-surround'
-Plugin 'mileszs/ack.vim'
-Plugin '907th/vim-auto-save'
-Plugin 'junegunn/fzf.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'SirVer/ultisnips'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'autozimu/LanguageClient-neovim'
-Plugin 'reasonml-editor/vim-reason-plus'
-Plugin 'itchyny/lightline.vim'
-Plugin 'lifepillar/vim-solarized8'
-Plugin 'lifepillar/vim-cheat40'
+call plug#begin()
+
+Plug 'VundleVim/Vundle.vim'
+Plug 'scrooloose/syntastic'
+Plug 'scrooloose/nerdtree'
+Plug 'fatih/vim-go'
+Plug 'jlanzarotta/bufexplorer'
+Plug 'tpope/vim-surround'
+Plug 'mileszs/ack.vim'
+Plug '907th/vim-auto-save'
+Plug 'junegunn/fzf.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'SirVer/ultisnips'
+Plug 'airblade/vim-gitgutter'
+Plug 'autozimu/LanguageClient-neovim'
+Plug 'reasonml-editor/vim-reason-plus'
+Plug 'itchyny/lightline.vim'
+Plug 'lifepillar/vim-solarized8'
+Plug 'lifepillar/vim-cheat40'
 
 if has('nvim')
-  Plugin 'Shougo/deoplete.nvim'
+  Plug 'Shougo/deoplete.nvim'
 endif
 
-call vundle#end()
-
-filetype plugin indent on " Filetype auto-detection
-syntax on " Syntax highlighting
-filetype plugin indent on    " required
+call plug#end()
 
 source ~/dev-setup/vim/vimrcs/basic.vim
 source ~/dev-setup/vim/vimrcs/filetypes.vim
