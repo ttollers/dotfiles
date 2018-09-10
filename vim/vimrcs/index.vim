@@ -2,8 +2,8 @@
 call plug#begin()
 
 Plug 'VundleVim/Vundle.vim'
-Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
+Plug 'w0rp/ale'
 Plug 'fatih/vim-go'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'tpope/vim-surround'
