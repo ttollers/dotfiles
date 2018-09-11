@@ -33,7 +33,6 @@ source ~/dev-setup/vim/vimrcs/filetypes.vim
 source ~/dev-setup/vim/vimrcs/plugins_config.vim
 source ~/dev-setup/vim/vimrcs/extended.vim
 
-" ON STARTUP
 if has('nvim')
   source ~/dev-setup/vim/vimrcs/nvim.vim
 endif
