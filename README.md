@@ -6,25 +6,10 @@ git clone get@github.com/ttollers/vim-setup ~/vim-setup
 ```
 
 # Install neovim (optional)
-TODO: test this
+This installs neovim and sets up the vimrcs and installs all plugins onto both vim and neovim
 ``` 
-brew install neovim 
-mkdir -p ~/.config/nvim
-echo "set runtimepath^=~/.vim runtimepath+=~/.vim/after \
-let &packpath = &runtimepath \
-source ~/.vimrc" >> ~/.config/nvim/init.vim 
+bash ./setup/neovim.sh
 ```
 
-# Install Ack
-```
-brew install ack
-```
 
-# Get latest Vim
-TODO
 
-# Install the Language Client
-TODO: not completed
-```
-bash ~/.vim/bundle/LanguageClient-neovim/install.sh 
-```
