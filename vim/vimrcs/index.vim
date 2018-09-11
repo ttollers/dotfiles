@@ -1,7 +1,6 @@
 
 call plug#begin()
 
-Plug 'VundleVim/Vundle.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'w0rp/ale'
 Plug 'fatih/vim-go'
@@ -13,14 +12,18 @@ Plug 'junegunn/fzf.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'SirVer/ultisnips'
 Plug 'airblade/vim-gitgutter'
-Plug 'autozimu/LanguageClient-neovim'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 Plug 'reasonml-editor/vim-reason-plus'
 Plug 'itchyny/lightline.vim'
 Plug 'lifepillar/vim-solarized8'
 Plug 'lifepillar/vim-cheat40'
 
 if has('nvim')
-  Plug 'Shougo/deoplete.nvim'
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  let g:deoplete#enable_at_startup = 1
 endif
 
 call plug#end()
