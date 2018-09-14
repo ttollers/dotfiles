@@ -4,3 +4,4 @@ PROJECT_DIR="${PROJECT_DIR:-default ~/Projects}"
 npm install eslint -g 
 cp ./js/.eslintrc $PROJECT_DIR
 
+npm install prettier -g
