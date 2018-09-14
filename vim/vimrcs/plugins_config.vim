@@ -1,8 +1,3 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Important:
-"       This requries that you install https://github.com/amix/vimrc !
-"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
 " => bufExplorer plugin
@@ -128,12 +123,14 @@ nnoremap <silent> <leader>= :ALEFix<cr>
 let g:gitgutter_enabled=1
 nnoremap <silent> <leader>d :GitGutterToggle<cr>
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim Auto Save
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:auto_save = 1  " enable AutoSave on Vim startup
 let g:auto_save_write_all_buffers = 0  " write all open buffers as if you would use :wa
 let g:auto_save_events = ["InsertLeave", "TextChanged"] 
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Utilsnips
@@ -145,6 +142,7 @@ let g:UltiSnipsJumpForwardTrigger="<Tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-Tab>"
 let g:UltiSnipsEditSplit="vertical"
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Lanugage Server Plugin
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -152,6 +150,7 @@ nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> gf :call LanguageClient_textDocument_formatting()<cr>
 nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Deo complete
