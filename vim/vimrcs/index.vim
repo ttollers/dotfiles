@@ -21,6 +21,7 @@ Plug 'reasonml-editor/vim-reason-plus'
 Plug 'itchyny/lightline.vim'
 Plug 'lifepillar/vim-solarized8'
 Plug 'lifepillar/vim-cheat40'
+Plug 'scrooloose/nerdcommenter'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
