@@ -11,6 +11,7 @@ Plug '907th/vim-auto-save'
 Plug 'junegunn/fzf.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'"
 Plug 'airblade/vim-gitgutter'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',

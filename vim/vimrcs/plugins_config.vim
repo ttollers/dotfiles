@@ -145,12 +145,11 @@ let g:auto_save_events = ["InsertLeave", "TextChanged"]
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Utilsnips
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" If you want :UltiSnipsEdit to split your window.
+" Don't use <tab> if integrating with deocompete
+let g:UltiSnipsExpandTrigger="<nop>"
+let g:ulti_expand_or_jump_res = 0
+let g:UltiSnipsJumpForwardTrigger="<Tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-Tab>"
 let g:UltiSnipsEditSplit="vertical"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -165,8 +164,22 @@ nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
 " => Deo complete
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has('nvim')
-    let g:deoplete#enable_at_startup = 1
-    " sets tab to cycle through auto-complete options
-    inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-    inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+	let g:deoplete#enable_at_startup = 1
+	" sets tab to cycle through auto-complete options
+	inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+	inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+	" makes it play nice with utilsnips
+	set completeopt=longest,menuone,preview
+	function ExpandSnippetOrCarriageReturn()
+			let snippet = UltiSnips#ExpandSnippetOrJump()
+			if g:ulti_expand_or_jump_res > 0
+					return snippet
+			else
+					return "\<CR>"
+			endif
+	endfunction
+	inoremap <expr> <CR> pumvisible() ? "\<C-R>=ExpandSnippetOrCarriageReturn()\<CR>" : "\<CR>"
+
 endif
+
