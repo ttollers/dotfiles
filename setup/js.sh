@@ -5,3 +5,5 @@ npm install eslint -g
 cp ./js/.eslintrc $PROJECT_DIR
 
 npm install prettier -g
+cp ./js/.prettierrc $PROJECT_DIR
+
