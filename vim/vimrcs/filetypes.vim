@@ -26,7 +26,6 @@ au FileType python set indentkeys-=0#
 """"""""""""""""""""""""""""""
 " => JavaScript section
 """""""""""""""""""""""""""""""
-au FileType javascript call JavaScriptLiveTemplates()
 au FileType javascript setl fen
 au FileType javascript setl nocindent
 
@@ -46,11 +45,6 @@ function! JavaScriptFold()
     endfunction
     setl foldtext=FoldText()
 endfunction
-
-function JavaScriptLiveTemplates()
-    imap cl<tab> console.log()<left>
-endfunction
-
 
 
 """"""""""""""""""""""""""""""
@@ -75,6 +69,7 @@ endif
 
 
 """"""""""""""""""""""""""""""
-" => Twig section
+" => Markdown
 """"""""""""""""""""""""""""""
-autocmd BufRead *.twig set syntax=html filetype=html
+" au FileType markdown set wrap
+

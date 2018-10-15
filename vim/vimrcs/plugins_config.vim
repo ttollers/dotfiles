@@ -10,13 +10,6 @@ map <leader>o :BufExplorer<cr>
 
 
 """"""""""""""""""""""""""""""
-" => MRU plugin
-""""""""""""""""""""""""""""""
-let MRU_Max_Entries = 400
-map <leader>f :MRU<CR>
-
-
-""""""""""""""""""""""""""""""
 " => CTRL-P
 """"""""""""""""""""""""""""""
 let g:ctrlp_working_path_mode = 0
@@ -113,7 +106,8 @@ let g:go_fmt_command = "goimports"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Ale (syntax checker)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ale_fixers = {'javascript': ['eslint', 'prettier']}
+let g:ale_fixers = {'javascript': ['eslint']}
+
 nnoremap <silent> <leader>= :ALEFix<cr>
 
 
@@ -162,7 +156,7 @@ if has('nvim')
 	inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 	" makes it play nice with utilsnips
-	set completeopt=longest,menuone,preview
+	set completeopt=menuone,preview
 	function ExpandSnippetOrCarriageReturn()
 			let snippet = UltiSnips#ExpandSnippetOrJump()
 			if g:ulti_expand_or_jump_res > 0
@@ -175,3 +169,22 @@ if has('nvim')
 
 endif
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-test
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let test#javascript#mocha#file_pattern = '\.spec\.js$' 
+let test#neovim#term_position = "left"
+
+" runs tests on auto save
+"augroup test
+  "autocmd!
+  "autocmd BufWrite * if test#exists() |
+    "\   TestFile |
+    "\ endif
+"augroup END
+
+nmap <silent> <leader><C-n> :TestNearest<CR> " , Ctrl+n
+nmap <silent> <leader><C-f> :TestFile<CR>    " , Ctrl+f
+nmap <silent> <leader><C-s> :TestSuite<CR>   " , Ctrl+s
+nmap <silent> <leader><C-l> :TestLast<CR>    " , Ctrl+l
+nmap <silent> <leader><C-g> :TestVisit<CR>   " , Ctrl+g

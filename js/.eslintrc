@@ -43,6 +43,9 @@ rules:
     - 2
     - before: true
       after: true
+  comma-dangle:
+    - error
+    - always-multiline
 parserOptions:
   ecmaVersion: 2017
   ecmaFeatures:

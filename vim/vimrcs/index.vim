@@ -22,6 +22,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'lifepillar/vim-solarized8'
 Plug 'lifepillar/vim-cheat40'
 Plug 'scrooloose/nerdcommenter'
+Plug 'janko-m/vim-test'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
