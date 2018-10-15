@@ -106,7 +106,10 @@ let g:go_fmt_command = "goimports"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Ale (syntax checker)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ale_fixers = {'javascript': ['eslint']}
+let g:ale_fixers = {
+\   'javascript': ['eslint'], 
+\   'json': ['prettier']
+\ }
 
 nnoremap <silent> <leader>= :ALEFix<cr>
 
