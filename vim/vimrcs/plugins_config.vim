@@ -29,13 +29,6 @@ ino <c-j> <c-r>=snipMate#TriggerSnippet()<cr>
 snor <c-j> <esc>i<right><c-r>=snipMate#TriggerSnippet()<cr>
 
 
-""""""""""""""""""""""""""""""
-" => Vim grep
-""""""""""""""""""""""""""""""
-let Grep_Skip_Dirs = 'RCS CVS SCCS .svn generated'
-set grepprg=/bin/grep\ -nH
-
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Nerd Tree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -108,8 +101,12 @@ let g:go_fmt_command = "goimports"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ale_fixers = {
 \   'javascript': ['eslint'], 
-\   'json': ['prettier']
+\   'json': ['prettier'],
+\   'python': ['flake8'],
+\   'typescript': ['tslint']
 \ }
+
+let g:ale_linters_ignore = {'typescript': ['tslint', 'eslint']}
 
 nnoremap <silent> <leader>= :ALEFix<cr>
 
@@ -141,12 +138,9 @@ let g:UltiSnipsEditSplit="vertical"
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Lanugage Server Plugin
+" => Yats (typescript syntax highlighting)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent> gf :call LanguageClient_textDocument_formatting()<cr>
-nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+let g:yats_host_keyword = 1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -160,7 +154,7 @@ if has('nvim')
 
 	" makes it play nice with utilsnips
 	set completeopt=menuone,preview
-	function ExpandSnippetOrCarriageReturn()
+	function! ExpandSnippetOrCarriageReturn()
 			let snippet = UltiSnips#ExpandSnippetOrJump()
 			if g:ulti_expand_or_jump_res > 0
 					return snippet
@@ -191,3 +185,9 @@ nmap <silent> <leader><C-f> :TestFile<CR>    " , Ctrl+f
 nmap <silent> <leader><C-s> :TestSuite<CR>   " , Ctrl+s
 nmap <silent> <leader><C-l> :TestLast<CR>    " , Ctrl+l
 nmap <silent> <leader><C-g> :TestVisit<CR>   " , Ctrl+g
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-terraform
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:terraform_align=1
+

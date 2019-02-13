@@ -48,15 +48,6 @@ endfunction
 
 
 """"""""""""""""""""""""""""""
-" => Reasonml section
-"""""""""""""""""""""""""""""""
-let g:LanguageClient_serverCommands = {
-\ 'reason': ['ocaml-language-server', '--stdio'],
-\ 'ocaml': ['ocaml-language-server', '--stdio'],
-\ }
-
-
-""""""""""""""""""""""""""""""
 " => Shell section
 """"""""""""""""""""""""""""""
 if exists('$TMUX') 

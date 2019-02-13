@@ -8,21 +8,20 @@ Plug 'jlanzarotta/bufexplorer'
 Plug 'tpope/vim-surround'
 Plug 'mileszs/ack.vim'
 Plug '907th/vim-auto-save'
-Plug 'junegunn/fzf.vim'
 Plug 'pangloss/vim-javascript'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'"
 Plug 'airblade/vim-gitgutter'
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 Plug 'reasonml-editor/vim-reason-plus'
 Plug 'itchyny/lightline.vim'
 Plug 'lifepillar/vim-solarized8'
 Plug 'lifepillar/vim-cheat40'
 Plug 'scrooloose/nerdcommenter'
 Plug 'janko-m/vim-test'
+Plug 'hashivim/vim-terraform'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -31,11 +30,11 @@ endif
 
 call plug#end()
 
-source ~/dev-setup/vim/vimrcs/basic.vim
-source ~/dev-setup/vim/vimrcs/filetypes.vim
-source ~/dev-setup/vim/vimrcs/plugins_config.vim
-source ~/dev-setup/vim/vimrcs/extended.vim
+source ~/dotfiles/vim/vimrcs/basic.vim
+source ~/dotfiles/vim/vimrcs/filetypes.vim
+source ~/dotfiles/vim/vimrcs/plugins_config.vim
+source ~/dotfiles/vim/vimrcs/extended.vim
 
 if has('nvim')
-  source ~/dev-setup/vim/vimrcs/nvim.vim
+  source ~/dotfiles/vim/vimrcs/nvim.vim
 endif

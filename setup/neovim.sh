@@ -5,14 +5,14 @@ let &packpath = &runtimepath \
 source ~/.vimrc" >> ~/.config/nvim/init.vim 
 
 # Add python as neovim dependency
-(if using python3)
+# (if using python3)
 ```
 pip3 install --user neovim
 ```
 
-# install Ack for plugin
+# install dependencies
 ```
-brew install ack
+brew install ack fzf
 ```
 
 # Install all plugins for both vim and neovim
