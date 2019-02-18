@@ -95,8 +95,8 @@ set tm=500
 syntax enable 
 
 let g:solarized_use16 = 1
-colorscheme solarized8
 set background=dark
+colorscheme gruvbox
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8

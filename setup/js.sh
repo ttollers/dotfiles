@@ -8,3 +8,5 @@ cp ./js/.prettierrc $PROJECT_DIR/.prettierrc
 # install typescript
 npm install typescript neovim ts-node tslint tslint-config-airbnb -g
 
+# elm
+npm install -g elm elm-oracle elm-format elm-test

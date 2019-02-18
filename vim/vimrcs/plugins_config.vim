@@ -1,3 +1,9 @@
+""""""""""""""""""""""""""""""
+" => bufExplorer plugin
+""""""""""""""""""""""""""""""
+let g:polyglot_disabled = ['elm', 'ts']
+
+
 
 """"""""""""""""""""""""""""""
 " => bufExplorer plugin
@@ -65,7 +71,7 @@ let g:lightline = {
       \ 'component_function': {
       \   'filename': 'LightLineFilename'
       \ },
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'left': [ ['mode', 'paste'],
       \             ['fugitive', 'readonly', 'filename', 'modified'] ],
