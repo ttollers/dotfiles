@@ -69,12 +69,13 @@ au FileType mako vmap Si S"i${ _(<esc>2f"a) }<esc>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:lightline = {
       \ 'component_function': {
-      \   'filename': 'LightLineFilename'
+      \   'filename': 'LightLineFilename',
+      \   'cocstatus': 'coc#status'
       \ },
       \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'left': [ ['mode', 'paste'],
-      \             ['fugitive', 'readonly', 'filename', 'modified'] ],
+      \             ['cocstatus', 'fugitive', 'readonly', 'filename', 'modified'] ],
       \   'right': [ [ 'lineinfo' ], ['percent'] ]
       \ },
       \ 'component': {
@@ -90,6 +91,7 @@ let g:lightline = {
       \ 'separator': { 'left': ' ', 'right': ' ' },
       \ 'subseparator': { 'left': ' ', 'right': ' ' }
       \ }
+
 
 function! LightLineFilename()
   return expand('%')
@@ -112,7 +114,8 @@ let g:ale_fixers = {
 \   'typescript': ['tslint']
 \ }
 
-let g:ale_linters_ignore = {'typescript': ['tslint', 'eslint']}
+let g:ale_linters = {'typescript': ['tsserver', 'eslint']}
+let g:ale_linters_ignore = {'typescript': ['eslint']}
 
 nnoremap <silent> <leader>= :ALEFix<cr>
 
@@ -150,27 +153,37 @@ let g:yats_host_keyword = 1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Deo complete
+" => coc.nvim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if has('nvim')
-	let g:deoplete#enable_at_startup = 1
-	" sets tab to cycle through auto-complete options
-	inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-	inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" use <tab> for trigger completion and navigate to next complete item
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-	" makes it play nice with utilsnips
-	set completeopt=menuone,preview
-	function! ExpandSnippetOrCarriageReturn()
-			let snippet = UltiSnips#ExpandSnippetOrJump()
-			if g:ulti_expand_or_jump_res > 0
-					return snippet
-			else
-					return "\<CR>"
-			endif
-	endfunction
-	inoremap <expr> <CR> pumvisible() ? "\<C-R>=ExpandSnippetOrCarriageReturn()\<CR>" : "\<CR>"
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
 
-endif
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K for show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if &filetype == 'vim'
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+" Use <c-space> for trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-test
@@ -196,4 +209,17 @@ nmap <silent> <leader><C-g> :TestVisit<CR>   " , Ctrl+g
 " => vim-terraform
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:terraform_align=1
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => elm-vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:elm_jump_to_error = 0
+let g:elm_make_show_warnings = 0
+let g:elm_syntastic_show_warnings = 0
+let g:elm_browser_command = ""
+let g:elm_detailed_complete = 1
+let g:elm_format_autosave = 0
+let g:elm_format_fail_silently = 1
+let g:elm_setup_keybindings = 1
 

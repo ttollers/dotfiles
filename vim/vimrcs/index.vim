@@ -14,7 +14,6 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'airblade/vim-gitgutter'
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 Plug 'reasonml-editor/vim-reason-plus'
 Plug 'itchyny/lightline.vim'
 Plug 'morhetz/gruvbox'
@@ -23,13 +22,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'janko-m/vim-test'
 Plug 'hashivim/vim-terraform'
 Plug 'elmcast/elm-vim'
-Plug 'pbogut/deoplete-elm'
 Plug 'sheerun/vim-polyglot'
-
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  let g:deoplete#enable_at_startup = 1
-endif
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
 call plug#end()
 
