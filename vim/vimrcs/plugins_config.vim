@@ -97,6 +97,14 @@ function! LightLineFilename()
   return expand('%')
 endfunction
 
+function! MyFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+endfunction
+
+function! MyFileformat()
+  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+endfunction
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim-go
@@ -114,7 +122,7 @@ let g:ale_fixers = {
 \   'typescript': ['tslint']
 \ }
 
-let g:ale_linters = {'typescript': ['tsserver', 'eslint']}
+let g:ale_linters = {'typescript': ['eslint']}
 let g:ale_linters_ignore = {'typescript': ['eslint']}
 
 nnoremap <silent> <leader>= :ALEFix<cr>
@@ -125,14 +133,6 @@ nnoremap <silent> <leader>= :ALEFix<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:gitgutter_enabled=1
 nnoremap <silent> <leader>d :GitGutterToggle<cr>
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Vim Auto Save
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:auto_save = 1  " enable AutoSave on Vim startup
-let g:auto_save_write_all_buffers = 0  " write all open buffers as if you would use :wa
-let g:auto_save_events = ["InsertLeave", "TextChanged"] 
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -184,6 +184,9 @@ endfunction
 " Use <c-space> for trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 
+" Use `[c` and `]c` for navigate diagnostics
+nmap <silent> [c <Plug>(coc-diagnostic-prev)
+nmap <silent> ]c <Plug>(coc-diagnostic-next)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-test
@@ -222,4 +225,18 @@ let g:elm_detailed_complete = 1
 let g:elm_format_autosave = 0
 let g:elm_format_fail_silently = 1
 let g:elm_setup_keybindings = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Ack
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use the the_silver_searcher if possible (much faster than Ack)
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep --smart-case'
+endif
+
+" When you press gv you Ack after the selected text
+vnoremap <silent> gv :call VisualSelection('gv', '')<CR>
+
+" Open Ack and put the cursor in the right position
+map <leader>g :Ack 
 

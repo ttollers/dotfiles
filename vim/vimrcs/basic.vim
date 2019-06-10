@@ -94,9 +94,12 @@ set tm=500
 " Enable syntax highlighting
 syntax enable 
 
-let g:solarized_use16 = 1
+" Theme
 set background=dark
-colorscheme gruvbox
+colorscheme gruvbox 
+if (has("termguicolors"))
+ set termguicolors
+endif
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
@@ -140,6 +143,9 @@ set ai "Auto indent
 set si "Smart indent
 set nowrap "don't wrap lines
 
+" save all shortcuts
+noremap <Leader>s :wa<CR>
+noremap <c-s> :wa<CR>
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
@@ -178,7 +184,7 @@ if has('nvim')
 endif
 
 " Close the current buffer
-map <leader>bd :Bclose<cr>:tabclose<cr>gT
+map <leader>bd :Bclose<cr>gT
 
 " Close all the buffers
 map <leader>ba :bufdo bd<cr>
