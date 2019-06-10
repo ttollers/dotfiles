@@ -85,7 +85,6 @@ set mat=2
 " No annoying sound on errors
 set noerrorbells
 set novisualbell
-set t_vb=
 set tm=500
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -96,8 +95,9 @@ syntax enable
 
 " Theme
 set background=dark
-let g:oceanic_next_terminal_bold = 1
-let g:oceanic_next_terminal_italic = 1
+let g:gruvbox_italic = 1
+let g:gruvbox_use16 = 1
+let g:gruvbox_italicize_comments = 0
 colorscheme gruvbox 
 if (has("termguicolors"))
  set termguicolors
@@ -171,6 +171,8 @@ map <silent> <leader><cr> :noh<cr>
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
+" hack for now - should be fixed to get c-h mapping working
+nmap <BS> <C-W>h
 map <C-l> <C-W>l
 
 " Terminal mappings
