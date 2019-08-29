@@ -8,8 +8,7 @@ set guioptions-=L
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Fast editing and reloading of vimrc configs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <leader>e :e! ~/dotfiles/vim/vimrcs/
-autocmd! bufwritepost ~/dotfiles/vim/vimrcs/*.vim source ~/.config/nvim/init.vim
+map <leader>r :so ~/.config/nvim/init.vim<cr>:CocRestart<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

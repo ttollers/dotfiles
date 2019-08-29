@@ -107,12 +107,6 @@ endfunction
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Vim-go
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:go_fmt_command = "goimports"
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Ale (syntax checker)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ale_fixers = {
@@ -207,6 +201,9 @@ inoremap <silent><expr> <c-space> coc#refresh()
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
 nmap <silent> ]c <Plug>(coc-diagnostic-next)
 
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : 
+                                           \"\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-test
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -244,6 +241,12 @@ let g:elm_detailed_complete = 1
 let g:elm_format_autosave = 0
 let g:elm_format_fail_silently = 1
 let g:elm_setup_keybindings = 1
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Polyglot
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:polyglot_disabled = ['ts', 'json', 'typescript']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Ack
