@@ -21,3 +21,6 @@ vim +PlugInstall +qall
 nvim +PlugInstall +qall
 ```
 
+# Language Server Installs
+npm i -g bash-language-server
+npm install -g dockerfile-language-server-nodejs
