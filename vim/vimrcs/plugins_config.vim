@@ -204,6 +204,9 @@ nmap <silent> ]c <Plug>(coc-diagnostic-next)
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : 
                                            \"\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
+" shows list of recently yanked stuff...
+nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-test
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

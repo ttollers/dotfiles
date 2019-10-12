@@ -22,6 +22,10 @@ au FileType python set cindent
 au FileType python set cinkeys-=0#
 au FileType python set indentkeys-=0#
 
+""""""""""""""""""""""""""""""
+" => Typescript section
+"""""""""""""""""""""""""""""""
+au FileType typescript nnoremap <silent> <leader>+ :CocCommand tsserver.organizeImports<cr>
 
 """"""""""""""""""""""""""""""
 " => JavaScript section

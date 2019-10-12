@@ -1,9 +1,5 @@
 # ALIAS
 
-# GIT
-alias gs="git status"
-alias gd="git diff"
-
 # docker
 alias dc="docker-compose"
 
