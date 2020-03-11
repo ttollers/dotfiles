@@ -1,23 +1,4 @@
-# ALIAS
-
-# docker
-alias dc="docker-compose"
-
-# kubernetes
-alias k="kubectl"
-
-export HELM_HOST=:44134
-alias tiller-up="tiller -listen=localhost:44134 -storage=secret -logtostderr"
-
-function pushit() {
- bnch=$(git branch | grep \* | cut -d ' ' -f2)
- git add . && git commit -m "$1" && git push origin $bnch
-}
-
-function pullit() {
- bnch=$(git branch | grep \* | cut -d ' ' -f2)
- git push origin $bnch
-}
+#!/bin/bash
 
 function reload() {
   source ~/.profile
@@ -25,3 +6,9 @@ function reload() {
 
 . /usr/local/etc/profile.d/z.sh
 
+source $(dirname $0)/aliases.sh
+source $(dirname $0)/personal_aliases.sh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion

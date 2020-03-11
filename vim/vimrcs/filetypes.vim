@@ -26,6 +26,9 @@ au FileType python set indentkeys-=0#
 " => Typescript section
 """""""""""""""""""""""""""""""
 au FileType typescript nnoremap <silent> <leader>+ :CocCommand tsserver.organizeImports<cr>
+au FileType typescript nnoremap <silent> <leader>tsrp :CocCommand tsserver.reloadProjects<cr>
+au FileType typescript nnoremap <silent> <leader>tsr :CocCommand tsserver.restart<cr>
+au FileType typescript nnoremap <silent> <leader>tsw :CocCommand tsserver.watchBuild<cr>
 
 """"""""""""""""""""""""""""""
 " => JavaScript section

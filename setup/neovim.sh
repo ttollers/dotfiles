@@ -1,8 +1,8 @@
 brew install neovim 
 mkdir -p ~/.config/nvim
-echo "set runtimepath^=~/.vim runtimepath+=~/.vim/after \
-let &packpath = &runtimepath \
-source ~/.vimrc" >> ~/.config/nvim/init.vim 
+echo "set runtimepath^=~/.vim runtimepath+=~/.vim/after
+let &packpath = &runtimepath
+source ~/dotfiles/vim/vimrcs/index.vim" >> ~/.config/nvim/init.vim
 
 # Add python as neovim dependency
 # (if using python3)
