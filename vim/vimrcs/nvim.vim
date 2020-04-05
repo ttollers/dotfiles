@@ -9,3 +9,6 @@ augroup TerminalStuff
    au! 
   autocmd TermOpen * setlocal nonumber norelativenumber
 augroup END
+
+" fix issue with vim in vim when using git editor
+let $GIT_EDITOR = 'nvr -cc split --remote-wait'

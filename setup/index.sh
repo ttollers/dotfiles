@@ -1,5 +1,6 @@
 #!/bin/bash
 
+./brew.sh
 ./shell.sh
 ./js.sh
 ./neovim.sh

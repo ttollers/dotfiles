@@ -29,10 +29,6 @@ alias kn='k config set-context --current --namespace'
 
 alias fsync='fluxctl sync --k8s-fwd-ns flux'
 
-autoload -Uz compinit
-compinit
-source <(kubectl completion zsh)
-
 # Terraform
 alias tf="terraform"
 alias tfi="terraform init"
