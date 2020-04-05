@@ -7,4 +7,4 @@ brew install neovim z zsh zsh-completions ack fzf
 brew install --HEAD olafurpg/scalafmt/scalafmt
 
 # misc
-brew install psql
+brew install libpq # postgress apps like psql and pg_dump
